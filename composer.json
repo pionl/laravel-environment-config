@@ -1,0 +1,23 @@
+{
+  "name": "pion/laravel-environment-config",
+  "description": "App service for loading the config based on environment. Also provides",
+  "require": {
+    "illuminate/support": "5.*",
+    "illuminate/foundation": "5.*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Pion\\Laravel\\EnvironmentConfig\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Kluska",
+      "email": "martin.kluska@imakers.cz"
+    }
+  ],
+  "minimum-stability": "stable"
+}
