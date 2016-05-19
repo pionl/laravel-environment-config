@@ -17,7 +17,9 @@ The default implementation that looks for local config only.  Uses the `AppEnvir
 ### Enable environment config load
 Extend the register (and set before parent call) or construct method and set `$checkOnlyLocalEnvironment` property to false.
 
-    public function __construct() {
+    public function __construct(\Illuminate\Contracts\Foundation\Application $app) {
+        parent::__construct($app);
+        
         $this->checkOnlyLocalEnvironment = false;
     }
 

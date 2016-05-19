@@ -13,14 +13,18 @@ use \Illuminate\Contracts\Foundation\Application;
 trait AppServiceConfigLoaderTrait
 {
     /**
+     * Checks if the config exists and loats the aliases and providers
      * @param string      $configName
      * @param Application $app
      */
     protected function registerFromConfig($configName, $app)
     {
-        // register aliases and providers
-        $this->registerConfigData($app, $configName, "aliases")
-            ->registerConfigData($app, $configName, "providers");
+        // checks if config exists (preloads the file for first time)
+        if (\Config::has($configName)) {
+            // register aliases and providers
+            $this->registerConfigData($app, $configName, "aliases")
+                ->registerConfigData($app, $configName, "providers");
+        }
 
     }
 

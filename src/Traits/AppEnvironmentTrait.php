@@ -38,10 +38,7 @@ trait AppEnvironmentTrait
             return;
         }
 
-        // check if there is environment config and load it
-        if (\Config::has($this->app->environment())) {
-            $this->registerFromEnvironment($this->app->environment);
-        }
+        $this->registerFromEnvironment($this->app->environment());
     }
 
     /**
@@ -53,8 +50,20 @@ trait AppEnvironmentTrait
      */
     protected function registerFromEnvironment($environment)
     {
-        $this->registerFromConfig($this->configPrefix.$environment, $this->app);
+        $config = $this->getEnvironmentConfigName($environment);
+        $this->registerFromConfig($config, $this->app);
 
         return $this;
+    }
+
+    /**
+     * Returns the name of the config for the given environment
+     *
+     * @param string $environment
+     *
+     * @return string
+     */
+    private function getEnvironmentConfigName($environment) {
+        return $this->configPrefix.$environment;
     }
 }
