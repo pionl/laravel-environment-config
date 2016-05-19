@@ -3,7 +3,7 @@
   "description": "App service for loading the config based on environment. Also provides",
   "require": {
     "illuminate/support": "5.*",
-    "illuminate/foundation": "5.*"
+    "illuminate/contracts": "5.*"
   },
   "require-dev": {
   },
