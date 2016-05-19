@@ -37,7 +37,7 @@ trait AppServiceConfigLoaderTrait
     private function registerConfigData($app, $configName, $configKey)
     {
         // load the entries from config
-        $array = $app->config($configName.".".$configKey);
+        $array = \Config::get($configName.".".$configKey);
 
         // if there is data, run the method
         if (is_array($array)) {

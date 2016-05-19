@@ -21,6 +21,15 @@ Extend the register (and set before parent call) or construct method and set `$c
         $this->checkOnlyLocalEnvironment = false;
     }
 
+## Example
+It's important that you dont implement register 
+
+    use Pion\Laravel\EnvironmentConfig\AppServiceProvider as BaseAppServiceProvider;
+    
+    class AppServiceProvider extends BaseAppServiceProvider {
+    
+    }
+
 ## AppEnvironmentTrait
 Enables on demand loading of the config with provided the app instance and the name of the config name (without the prefix!).
 Uses the context of the app ($this->app) in the AppServiceProvider. All methods are protected.

@@ -39,8 +39,8 @@ trait AppEnvironmentTrait
         }
 
         // check if there is environment config and load it
-        if (Config::has($this->app->environment())) {
-            $this->registerEnvironment($this->app->environment);
+        if (\Config::has($this->app->environment())) {
+            $this->registerFromEnvironment($this->app->environment);
         }
     }
 
