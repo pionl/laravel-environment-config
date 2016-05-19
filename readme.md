@@ -11,6 +11,19 @@ The loader supports `alias` and `providers` keys.
 * app_local.php
 * app_production.php
 
+### Example of local with dev tools (require-dev in composer)
+
+    <?php
+    return [
+        "providers" => [
+            Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+            Barryvdh\Debugbar\ServiceProvider::class
+        ],
+        "aliases" => [
+            'Debugbar' => Barryvdh\Debugbar\Facade::class
+        ]
+    ];
+
 ## AppSeviceProvider
 The default implementation that looks for local config only.  Uses the `AppEnvironmentTrait`
 

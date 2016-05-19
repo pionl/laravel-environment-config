@@ -44,7 +44,7 @@ trait AppServiceConfigLoaderTrait
         $array = \Config::get($configName.".".$configKey);
 
         // if there is data, run the method
-        if (is_array($array)) {
+        if (is_array($array) && count($array) > 0) {
 
             // build the method
             $method = "register".ucfirst($configKey);
