@@ -5,13 +5,13 @@ use Illuminate\Support\ServiceProvider;
 use Pion\Laravel\EnvironmentConfig\Traits\AppEnvironmentTrait;
 
 /**
- * Class AppSeviceProvider
+ * Class AppServiceProvider
  *
  * Default usage of the service provider
  *
  * @package Pion\Laravel\EnvironmentConfig
  */
-class AppSeviceProvider extends ServiceProvider
+class AppServiceProvider extends ServiceProvider
 {
     use AppEnvironmentTrait;
 
