@@ -2,6 +2,12 @@
 Used to load app config, and register the alias and providers, based on environment or custom config by custom usage. In default looks only for local config `app_local.php`. You can enable
 loading of config based on the current environment (checks if config exists then loads it). More in `AppServiceProvider` and `AppEnvironmentTrait` docs.
 
+You can also load any config file you want at any time you need. Just use a `AppServiceConfigLoaderTrait` and call:
+
+    // class that uses the trait
+    // load the admin.php file into our app
+    $this->registerFromConfig("admin", $this->app);
+
 ## Config structure
 The structure of the config is same like basic app config and should be named with app prefix and the name of the environment: `app_{environment}`
 The loader supports `alias` and `providers` keys.
