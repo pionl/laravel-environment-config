@@ -7,6 +7,10 @@ You can also load any config file you want at any time you need. Just use a `App
     // class that uses the trait
     // load the admin.php file into our app
     $this->registerFromConfig("admin", $this->app);
+    
+## Instalation
+
+    composer require pion/laravel-environment-config
 
 ## Config structure
 The structure of the config is same like basic app config and should be named with app prefix and the name of the environment: `app_{environment}`
