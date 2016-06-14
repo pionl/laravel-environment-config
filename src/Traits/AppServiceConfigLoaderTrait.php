@@ -12,6 +12,8 @@ use \Illuminate\Contracts\Foundation\Application;
  */
 trait AppServiceConfigLoaderTrait
 {
+    use AppRegisterAliasesTrait;
+    
     /**
      * Checks if the config exists and loats the aliases and providers
      * @param string      $configName
@@ -68,23 +70,6 @@ trait AppServiceConfigLoaderTrait
     {
         foreach ($providers as $provider) {
             $app->register($provider);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Registers the aliases
-     *
-     * @param array       $aliases
-     * @param Application $app
-     *
-     * @return $this
-     */
-    protected function registerAliases(array $aliases, $app)
-    {
-        foreach ($aliases as $alias => $facade) {
-            $app->alias($alias, $facade);
         }
 
         return $this;
